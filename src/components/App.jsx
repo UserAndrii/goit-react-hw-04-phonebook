@@ -20,7 +20,9 @@ const App = () => {
   }, [contactsList]);
 
   const onDuplicateCheck = name => {
-    return contactsList.some(contact => contact.name === name);
+    return contactsList.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
   };
 
   const onFormSubmit = e => {
